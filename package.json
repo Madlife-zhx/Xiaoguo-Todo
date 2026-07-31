@@ -1,0 +1,50 @@
+{
+  "name": "xiaoguo-todo",
+  "version": "1.0.0",
+  "description": "浅色风格的离线 Windows 待办事项应用",
+  "main": "./out/main/index.js",
+  "author": "Todo List",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "electron-vite dev",
+    "typecheck": "tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p tsconfig.web.json",
+    "build": "npm run typecheck && electron-vite build",
+    "dist": "npm run build && electron-builder --win nsis portable",
+    "dist:portable": "npm run build && electron-builder --win portable",
+    "postinstall": "electron-builder install-app-deps",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "latest",
+    "react-dom": "latest"
+  },
+  "devDependencies": {
+    "@eslint/js": "latest",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "5.1.1",
+    "electron": "39.2.7",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "5.0.0",
+    "eslint": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "eslint-plugin-react-refresh": "latest",
+    "globals": "latest",
+    "jsdom": "latest",
+    "playwright-core": "^1.62.0",
+    "typescript": "latest",
+    "typescript-eslint": "latest",
+    "vite": "7.3.6",
+    "vitest": "latest"
+  }
+}
